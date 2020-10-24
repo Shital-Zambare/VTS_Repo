@@ -1,0 +1,9 @@
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\bin\Debug\netstandard2.1\DemoProject.DatabaseContext.deps.json
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\bin\Debug\netstandard2.1\DemoProject.DatabaseContext.dll
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\bin\Debug\netstandard2.1\DemoProject.DatabaseContext.pdb
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\obj\Debug\netstandard2.1\DemoProject.DatabaseContext.csprojAssemblyReference.cache
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\obj\Debug\netstandard2.1\DemoProject.DatabaseContext.csproj.CoreCompileInputs.cache
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\obj\Debug\netstandard2.1\DemoProject.DatabaseContext.AssemblyInfoInputs.cache
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\obj\Debug\netstandard2.1\DemoProject.DatabaseContext.AssemblyInfo.cs
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\obj\Debug\netstandard2.1\DemoProject.DatabaseContext.dll
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\DemoProject.DatabaseContext\obj\Debug\netstandard2.1\DemoProject.DatabaseContext.pdb

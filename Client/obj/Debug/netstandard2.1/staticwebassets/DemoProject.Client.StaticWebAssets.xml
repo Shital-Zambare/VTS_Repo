@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Client\bin\Debug\netstandard2.1\wwwroot\" />
+  <ContentRoot BasePath="_content/BlazorInputFile" Path="C:\Users\Shital.Zambare\.nuget\packages\blazorinputfile\0.2.0\build\..\staticwebassets\" />
+</StaticWebAssets>

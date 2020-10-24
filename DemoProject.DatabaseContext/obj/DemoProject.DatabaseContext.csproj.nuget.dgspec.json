@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Shital.Zambare\\Documents\\Visual Studio 2019\\Projects\\DemoProject\\DemoProject.DatabaseContext\\DemoProject.DatabaseContext.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Shital.Zambare\\Documents\\Visual Studio 2019\\Projects\\DemoProject\\DemoProject.DatabaseContext\\DemoProject.DatabaseContext.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Shital.Zambare\\Documents\\Visual Studio 2019\\Projects\\DemoProject\\DemoProject.DatabaseContext\\DemoProject.DatabaseContext.csproj",
+        "projectName": "DemoProject.DatabaseContext",
+        "projectPath": "C:\\Users\\Shital.Zambare\\Documents\\Visual Studio 2019\\Projects\\DemoProject\\DemoProject.DatabaseContext\\DemoProject.DatabaseContext.csproj",
+        "packagesPath": "C:\\Users\\Shital.Zambare\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shital.Zambare\\Documents\\Visual Studio 2019\\Projects\\DemoProject\\DemoProject.DatabaseContext\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Shital.Zambare\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://bentleycs.pkgs.visualstudio.com/_packaging/AssetWise/nuget/v3/index.json": {},
+          "https://bentleycs.pkgs.visualstudio.com/_packaging/AssetWise/nuget123/v3/index.json": {},
+          "https://bentleycs.pkgs.visualstudio.com/_packaging/Packages/nuget/v3/index.json": {},
+          "https://nuget.bentley.com/nuget/Default/": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+@page "/fetchUser"
+@using DemoProject.DatabaseContext
+@using System.IO
+@using BlazorInputFile
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+
+else
+{
+    <button @onclick="@Add" class="btn btn-success">Add</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>Name</th>
+                <th>MobileNumber</th>
+                <th>Organization</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Photopath</th>
+                <th />
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.UserId</td>
+                    <td>@user.Name</td>
+                    <td>@user.MobileNumber</td>
+                    <td>@user.Organization</td>
+                    <td>@user.Address</td>
+                    <td>@user.EmailAddress</td>
+                    <td>@user.Location</td>
+                    <td>@user.Photopath</td>
+                    <td><a class="btn btn-success btn-sm" @onclick="@(() => ShowEdit(user.UserId))">edit</a></td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (users != null && mode == MODE.Add) // Insert form
+{
+    <EditForm Model="@user" OnValidSubmit="@HandleAdd">
+        <table>
+            <tr>
+                <td>User Name: </td>
+                <td><InputText @bind-Value="@user.Name" id="name" /></td>
+            </tr>
+            <tr>
+                <td>MobileNumber: </td>
+                <td><InputText @bind-Value="@user.MobileNumber" name="MobileNumber" /></td>
+            </tr>
+            <tr>
+                <td>Organization: </td>
+                <td><InputText @bind-Value="@user.Organization" name="Organization" /></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><InputText @bind-Value="@user.EmailAddress" name="Email" /></td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td><InputText @bind-Value="@user.Address" name="Address" /></td>
+            </tr>
+            <tr>
+                <td>Location: </td>
+                <td><InputText @bind-Value="@user.Location" name="Location" /></td>
+            </tr>
+            <tr>
+                <td>Photograph: </td>
+                <td><InputFile  @bind-Value="@user.Photopath" OnChange="HandleSelection" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+
+    </EditForm>
+
+    @code {
+        private User user { get; set; } = new User();
+        string status;
+        protected async void HandleAdd()
+        {
+            await Http.PostAsJsonAsync<User>("UserInfo", user);
+            await load();
+        }
+        async Task HandleSelection(IFileListEntry[] files)
+        {
+            var file = files.FirstOrDefault();
+            if (file != null)
+            {
+                // Just load into .NET memory to show it can be done
+                // Alternatively it could be saved to disk, or parsed in memory, or similar
+                byte[] result;
+                using (var streamReader = new MemoryStream())
+                {
+                    await file.Data.CopyToAsync(streamReader);
+                    user.Photopath = streamReader.ToArray();
+                }
+                status = $"Finished loading {file.Size} bytes from {file.Name}";
+            }
+        }
+    }
+}
+
+@if (users != null && mode == MODE.Edit) // Update
+{
+    <EditForm Model="@user" OnValidSubmit="@HandleUpdate">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <table>
+            <tr>
+                <td>User Name: </td>
+                <td><InputText @bind-Value="@user.Name" id="name" /></td>
+            </tr>
+            <tr>
+                <td>MobileNumber: </td>
+                <td><InputText @bind-Value="@user.MobileNumber" name="MobileNumber" /></td>
+            </tr>
+            <tr>
+                <td>Organization: </td>
+                <td><InputText @bind-Value="@user.Organization" name="Organization" /></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><InputText @bind-Value="@user.EmailAddress" name="Email" /></td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td><InputText @bind-Value="@user.Address" name="Address" /></td>
+            </tr>
+            <tr>
+                <td>Location: </td>
+                <td><InputText @bind-Value="@user.Location" name="Location" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+
+        @code {
+            private async void HandleUpdate()
+            {
+                string endpoint = $"/api/UserInfo/GetUsers/{user.UserId}";
+
+                await Http.SendJsonAsync(HttpMethod.Put, endpoint, user);
+
+                await load();
+                mode = MODE.None;
+            }
+        }
+    </EditForm>
+}
+
+@functions{
+    User[] users;
+
+    private enum MODE { None, Add, Edit };
+    MODE mode = MODE.None;
+    User u;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await load();
+    }
+
+    protected async Task load()
+    {
+        users = await Http.GetFromJsonAsync<User[]>("UserInfo");
+        StateHasChanged();
+    }
+
+    protected void Add()
+    {
+        mode = MODE.Add;
+    }
+    protected async Task ShowEdit(int id)
+    {
+        var url = $"/api/UserInfo/GetUsers/{id}";
+        u = await Http.GetJsonAsync<User>(url).ConfigureAwait(false);
+        user.Name = u.Name;
+        user.UserId = u.UserId;
+        user.EmailAddress = u.EmailAddress;
+        user.MobileNumber = u.MobileNumber;
+        user.Organization = u.Organization;
+        user.Location = u.Location;
+        user.Address = u.Address;
+        user.Photopath = u.Photopath;
+        mode = MODE.Edit;
+    }
+
+
+}
+
+
+

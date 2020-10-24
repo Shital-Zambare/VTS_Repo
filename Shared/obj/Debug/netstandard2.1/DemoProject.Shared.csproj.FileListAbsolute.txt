@@ -1,0 +1,9 @@
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\bin\Debug\netstandard2.1\DemoProject.Shared.deps.json
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\bin\Debug\netstandard2.1\DemoProject.Shared.dll
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\bin\Debug\netstandard2.1\DemoProject.Shared.pdb
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\obj\Debug\netstandard2.1\DemoProject.Shared.csprojAssemblyReference.cache
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\obj\Debug\netstandard2.1\DemoProject.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\obj\Debug\netstandard2.1\DemoProject.Shared.AssemblyInfoInputs.cache
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\obj\Debug\netstandard2.1\DemoProject.Shared.AssemblyInfo.cs
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\obj\Debug\netstandard2.1\DemoProject.Shared.dll
+C:\Users\Shital.Zambare\Documents\Visual Studio 2019\Projects\DemoProject\Shared\obj\Debug\netstandard2.1\DemoProject.Shared.pdb
